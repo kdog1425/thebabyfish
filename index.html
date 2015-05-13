@@ -54,6 +54,11 @@
 
       init();
       animate();
+      var audio = document.createElement('audio');
+      var source = document.createElement('source');
+      source.src = 'sounds/baby.mp3';
+      audio.appendChild(source);
+      audio.play();
  
       function init() {
  
@@ -135,11 +140,6 @@
         zmesh.geometry.dynamic = true;
         meshes.push(zmesh);
         scene.add(zmesh);
-        var audio = document.createElement('audio');
-        var source = document.createElement('source');
-        source.src = 'sounds/baby.mp3';
-        audio.appendChild(source);
-        audio.play();
       }
  
       function onWindowResize() {
