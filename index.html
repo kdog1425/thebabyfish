@@ -50,15 +50,18 @@
       var points = [];
       var boxes = [];
       var val = 6.20 / 2016;
-      
+      var audio;
 
       init();
       animate();
-      var audio = document.createElement('audio');
-      var source = document.createElement('source');
-      source.src = 'sounds/baby.mp3';
-      audio.appendChild(source);
-      audio.play();
+      
+      function playSound(){
+        audio = document.createElement('audio');
+        var source = document.createElement('source');
+        source.src = 'sounds/baby.mp3';
+        audio.appendChild(source);
+        audio.play();
+      }
  
       function init() {
  
@@ -183,6 +186,10 @@
         mouseY = ( event.clientY - windowHalfY ) / 2;
     
       }
+    </script>
+
+    <script>
+      window.onload = function () { playSound() };
     </script>
  
   </body>
